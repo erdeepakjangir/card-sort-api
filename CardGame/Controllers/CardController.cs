@@ -18,9 +18,9 @@ namespace CardGame.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllCards()
+        public async Task <IActionResult> GetAllCards()
         {
-            return new JsonResult(_cardService.GetCards());
+            return new JsonResult( await _cardService.GetCards());
         }
 
         [HttpPost]
